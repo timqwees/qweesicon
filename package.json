@@ -1,9 +1,9 @@
 {
-  "name": "qweesicon",
-  "displayName": "QweesIcons Pack",
+  "name": "qweesicons",
+  "displayName": "QweesPack Icons",
   "description": "Beautiful minimalistic icons for Visual Studio Code",
-  "publisher": "QweesTeam Studio",
-  "version": "0.0.3",
+  "publisher": "QweesTeamStudio",
+  "version": "1.0.0",
   "icon": "icons/logo/favicon.png",
   "license": "MIT",
   "homepage": "https://github.com/timqwees/qweesicon#readme",
@@ -29,6 +29,11 @@
     "modern",
     "professional"
   ],
+  "scripts": {
+    "update-icons": "./update_icons.sh",
+    "create-package": "vsce package",
+    "publish": "vsce publish"
+  },
   "activationEvents": [
     "onStartupFinished"
   ],
@@ -49,7 +54,7 @@
     }
   ],
   "author": {
-    "name": "QweesTeam Studio",
+    "name": "QweesTeamStudio",
     "email": "qweesteamstudio@gmail.com",
     "url": "https://github.com/timqwees/qweesicon"
   },
@@ -71,20 +76,20 @@
   "contributes": {
     "iconThemes": [
       {
-        "id": "qweesicon",
-        "label": "QweesIcons Pack",
+        "id": "qweesicons",
+        "label": "QweesPack Icons",
         "path": "./script/setting.json"
       }
     ],
     "configuration": {
-      "title": "QweesIcons Pack",
+      "title": "QweesPack Icons",
       "properties": {
-        "qweesicon.activeIconPack": {
+        "qweesicons.activeIconPack": {
           "type": "string",
-          "default": "qweesicon",
+          "default": "qweesicons",
           "description": "Select the icon pack to use",
           "enum": [
-            "qweesicon"
+            "qweesicons"
           ]
         },
         "qweesicon.opacity": {
@@ -103,11 +108,6 @@
         }
       }
     }
-  },
-  "scripts": {
-    "update-icons": "./update_icons.sh",
-    "create-package": "vsce package",
-    "publish": "vsce publish"
   },
   "devDependencies": {
     "@vscode/test-electron": "^2.5.2",
