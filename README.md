@@ -1,8 +1,8 @@
 # QweesIcons
 
+![QweesIcons](https://github.com/timqwees/qweesicon/blob/main/icons/logo/Cover.png?raw=true)
+
 🎨 Красивые и минималистичные иконки для Visual Studio Code
-
-
 
 ## ✨ Почему QweesCore Icons?
 

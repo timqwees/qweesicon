@@ -1,41 +1,125 @@
 {
   "name": "qweesicon",
-  "displayName": "QweesCore Icons",
-  "description": "Official QweesCore Icon Theme for Visual Studio Code",
-  "publisher": "qweescore",
-  "version": "0.0.1",
+  "displayName": "QweesIcons Pack",
+  "description": "Beautiful minimalistic icons for Visual Studio Code",
+  "publisher": "QweesTeam Studio",
+  "version": "0.0.3",
   "icon": "icons/logo/favicon.png",
+  "license": "MIT",
+  "homepage": "https://github.com/timqwees/qweesicon#readme",
+  "main": "./extension.js",
+  "pricing": "Free",
+  "qna": "marketplace",
+  "categories": [
+    "Themes"
+  ],
+  "keywords": [
+    "icons",
+    "minimalistic",
+    "visual studio code",
+    "vscode",
+    "theme",
+    "icon theme",
+    "multi-root ready",
+    "pack icon",
+    "file icons",
+    "folder icons",
+    "minimal",
+    "clean",
+    "modern",
+    "professional"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "extensionKind": [
+    "ui",
+    "workspace"
+  ],
+  "badges": [
+    {
+      "url": "https://img.shields.io/badge/vscode-1.108.1+-blue.svg",
+      "href": "https://code.visualstudio.com/",
+      "description": "Compatible with VS Code 1.108.1+"
+    },
+    {
+      "url": "https://img.shields.io/badge/license-MIT-green.svg",
+      "href": "https://opensource.org/licenses/MIT",
+      "description": "MIT License"
+    }
+  ],
+  "author": {
+    "name": "QweesTeam Studio",
+    "email": "qweesteamstudio@gmail.com",
+    "url": "https://github.com/timqwees/qweesicon"
+  },
+  "galleryBanner": {
+    "color": "#1e1e1e",
+    "theme": "dark"
+  },
+  "bugs": {
+    "url": "https://github.com/timqwees/qweesicon/issues",
+    "email": "qweesteamstudio@gmail.com"
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/qweescore/qweesicon.git"
+    "url": "https://github.com/timqwees/qweesicon.git"
   },
   "engines": {
     "vscode": "^1.108.1"
   },
-  "categories": [
-    "Themes"
-  ],
-  "activationEvents": [],
-  "main": "./extension.js",
   "contributes": {
     "iconThemes": [
       {
         "id": "qweesicon",
-        "label": "QweesCore Icons",
+        "label": "QweesIcons Pack",
         "path": "./script/setting.json"
       }
-    ]
+    ],
+    "configuration": {
+      "title": "QweesIcons Pack",
+      "properties": {
+        "qweesicon.activeIconPack": {
+          "type": "string",
+          "default": "qweesicon",
+          "description": "Select the icon pack to use",
+          "enum": [
+            "qweesicon"
+          ]
+        },
+        "qweesicon.opacity": {
+          "type": "number",
+          "default": 1,
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Controls the opacity of the icons"
+        },
+        "qweesicon.saturation": {
+          "type": "number",
+          "default": 1,
+          "minimum": 0,
+          "maximum": 2,
+          "description": "Controls the saturation of the icons"
+        }
+      }
+    }
   },
   "scripts": {
     "update-icons": "./update_icons.sh",
-    "create-package": "vsce package"
+    "create-package": "vsce package",
+    "publish": "vsce publish"
   },
   "devDependencies": {
-    "@types/vscode": "^1.108.1",
-    "@types/mocha": "^10.0.10",
-    "@types/node": "22.x",
-    "eslint": "^9.39.2",
-    "@vscode/test-cli": "^0.0.12",
-    "@vscode/test-electron": "^2.5.2"
+    "@vscode/test-electron": "^2.5.2",
+    "vsce": "^2.15.0"
+  },
+  "dependencies": {},
+  "capabilities": {
+    "untrustedWorkspaces": {
+      "supported": true
+    },
+    "virtualWorkspaces": {
+      "supported": true
+    }
   }
 }
